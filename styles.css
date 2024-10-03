@@ -26,11 +26,10 @@ html, body {
     background-color: lightgray;
 }
 .animation {
-    width: 100%;
+    width: 100%;;
     display: flex;
     justify-content: center;
-    align-items: center;
-    overflow: hidden;
+    align-items: flex-start;
 }
 h1 {
     margin: 0;
@@ -52,7 +51,8 @@ p {
 #section1 .animation img {
     height: 100px;
     width: auto;
-    transform: translate(100px, 200px) scale(2) rotate(45deg);
+    /* transform: translate(100px, 200px) scale(2) rotate(45deg); */
+    transform: translate(100px, 100px);
 }
 
 /* Section 2: CSS Transitions */
