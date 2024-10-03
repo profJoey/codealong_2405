@@ -139,25 +139,3 @@ p {
         transform: rotate(360deg);
     }   
 }
-
-/* Section 6: Chaining CSS animations */
-#section6 .animation {
-    display: block;
-}
-#section6 .animation img {
-    height: 100px;
-    width: auto;
-    margin-left: 0;
-    animation: infinite 3s linear rotate,
-    ease-in-out 10s roll;
-}
-@keyframes rotate {
-    100% {
-        transform: rotate(360deg);
-    }   
-}
-@keyframes roll {
-    100% {
-        transform: translateX(1000%);
-    }
-}
