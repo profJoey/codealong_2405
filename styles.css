@@ -1,0 +1,163 @@
+/* styles.css */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: Arial, sans-serif;
+}
+
+.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    padding: 2rem;
+}
+.section:nth-of-type(odd) {
+    background-color: white;
+}
+
+.section:nth-of-type(even) {
+    background-color: lightgray;
+}
+.animation {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+h1 {
+    margin: 0;
+    font-size: 2em;
+    text-align: center;
+}
+
+p {
+    font-size: 1.2em;
+}
+#scrollButton {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+}
+
+/* Section 1: CSS Transform */
+
+#section1 .animation img {
+    height: 100px;
+    width: auto;
+    transform: translate(100px, 200px) scale(2) rotate(45deg);
+}
+
+/* Section 2: CSS Transitions */
+
+#section2 .animation button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: white;
+    background-color: #007BFF;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease,
+        transform 0.3s ease;
+}
+
+#section2 .animation button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+/* Section 3: CSS Keyframe Animations */
+
+@keyframes scaleIn {
+   0% {
+       transform: scale(.2);
+   }
+   85% {
+       transform: scale(1.1);
+   }
+   100% {
+       transform: scale(1);
+   } 
+}
+
+#section3 .animation h2 {
+    font-size: 3rem;
+    font-family: 'Fira Sans', sans-serif;
+    color: yellow;
+    text-shadow: 3px 3px 0px purple;
+    animation: scaleIn 1s ease;
+    animation-duration: 2s;
+}
+
+/* Section 4: CSS Animation */
+
+#section4 .animation {
+    display: block;
+}
+
+@keyframes move {
+    100% {
+        transform: translateX(1000%);
+    }
+}
+
+#section4 .animation img {
+    height: 100px;
+    width: auto;
+    margin-left: -200px;
+    animation-name: move;
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 3;
+}
+
+/* Section 5: Animation Play State */
+#section5 .animation img {
+    height: 100px;
+    width: auto;
+    margin-left: 0;
+    animation-name: rotate;
+    animation-duration: 2s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-play-state: paused;
+}
+#section5 .animation img:hover {
+    animation-play-state: running;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }   
+}
+
+/* Section 6: Chaining CSS animations */
+#section6 .animation {
+    display: block;
+}
+#section6 .animation img {
+    height: 100px;
+    width: auto;
+    margin-left: 0;
+    animation: infinite 3s linear rotate,
+    ease-in-out 10s roll;
+}
+@keyframes rotate {
+    100% {
+        transform: rotate(360deg);
+    }   
+}
+@keyframes roll {
+    100% {
+        transform: translateX(1000%);
+    }
+}
